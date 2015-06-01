@@ -17,11 +17,11 @@ __attribute__((section(".gnu.linkonce.this_module"))) = {
 static const struct modversion_info ____versions[]
 __used
 __attribute__((section("__versions"))) = {
-	{ 0x28950ef1, __VMLINUX_SYMBOL_STR(module_layout) },
-	{ 0x61aa871a, __VMLINUX_SYMBOL_STR(filp_close) },
+	{ 0x3c4fbfa6, __VMLINUX_SYMBOL_STR(module_layout) },
+	{ 0x6df1586e, __VMLINUX_SYMBOL_STR(filp_close) },
 	{ 0x4c4fef19, __VMLINUX_SYMBOL_STR(kernel_stack) },
 	{ 0x27e1a049, __VMLINUX_SYMBOL_STR(printk) },
-	{ 0x9c7c731b, __VMLINUX_SYMBOL_STR(filp_open) },
+	{ 0x7007657, __VMLINUX_SYMBOL_STR(filp_open) },
 };
 
 static const char __module_depends[]
