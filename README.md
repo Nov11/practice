@@ -2,6 +2,7 @@
 ugly getpid() syscall record implementation
 ###how to make them run online?###
 ###build external kernel module###
+##
 on fresh installed fedora 21
 yum groupinstall "Development tools"//get gcc and so on
 yum install kernel-devel-`uname -r` //kernel headers for building module
