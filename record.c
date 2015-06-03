@@ -18,7 +18,8 @@
 //#define IOCTL_GET_PID	0x2
 //#define IOCTL_START		0x3
 //#define IOCTL_STOP		0x4
-#define SYS_CALL_TABLE	0xffffffff8161d3c0
+#define SYS_CALL_TABLE	0xffffffff818017c0
+//0xffffffff8161d3c0
 
 MODULE_LICENSE("GPL");
 char* program = "a.out";
@@ -33,7 +34,7 @@ int Device_Open = 0;
 int to_record;
 int to_replay;
 void** systable = (void**)SYS_CALL_TABLE;
-
+char* file_name = "log";
 static int device_open(struct inode* inode, struct file* filp)
 {
 	if(Device_Open){
@@ -89,7 +90,7 @@ void write_log(void)
 	char buf[20];
 	int ret;
 
-	filp = filp_open("/home/c6s/test/log", O_RDWR | O_CREAT, 0644);
+	filp = filp_open(file_name, O_RDWR | O_CREAT, 0644);
 	if(IS_ERR(filp)){
 		printk("ERROR in filp_open\n");
 		return ;
@@ -113,7 +114,7 @@ int read_log(void)
 	long saved_pid;
 	struct file* filp;
 	int ret;
-	filp = filp_open("/home/c6s/test/log", O_RDWR, 0644);
+	filp = filp_open(file_name, O_RDWR, 0644);
 	if(IS_ERR(filp)){
 		printk(KERN_INFO"Error in filpopen (replay\n");
 		return -1;
